@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="login-area">
+      <h1 class="text-center">Welcome to Bank Arabic</h1>
+      <div class="content">
+        <div class="submit-area">
+          <h4>Loging</h4>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Name"
+          /><br /><br />
+          <input
+            class="form-control"
+            type="password"
+            placeholder="password"
+          /><br /><br />
+          <button id="login" class="btn btn-success">Enter</button>
+        </div>
+      </div>
+    </div>
+    <div id="transation-area">
+      <div class="row1">
+        <div class="col-md-4">
+          <div class="deposite">
+            <h5>Deposite</h5>
+            <h2>$<span id="currentDeposite">00</span></h2>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="withdraw">
+            <h5>Withdraw</h5>
+            <h2>$00</h2>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="balance">
+            <h5>Balance</h5>
+            <h2>$<span id="currentBalance">100</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="col-md-6">
+          <h4>Deposit</h4>
+          <input id="depositeAmount" class="btnD" type="text" /><br /><br />
+          <button id="addDeposite" class="btn btn-success btn1">
+            Deposite
+          </button>
+        </div>
+        <div class="col-md-6">
+          <h4>Withdraw</h4>
+          <input class="btnW" type="text" /><br /><br />
+          <button id="addWithdraw" class="btn btn-success btn1">
+            Withdraw
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      //login button
+      const loginBtn = document.getElementById("login");
+      loginBtn.addEventListener("click", function () {
+        const loginArea = document.getElementById("login-area");
+        loginArea.style.display = "none";
+
+        const transationArea = document.getElementById("transation-area");
+        transationArea.style.display = "block";
+      });
+
+      //deposite button
+      const depositeBtn = document.getElementById("addDeposite");
+      depositeBtn.addEventListener("click", function () {
+        const depositeAmount = document.getElementById("depositeAmount").value;
+        const depositeNumber = parseFloat(depositeAmount);
+
+        const currentDeposite =
+          document.getElementById("currentDeposite").innerText;
+        const currentDepositeNumber = parseFloat(currentDeposite);
+        const totalDeposite = depositeNumber + currentDepositeNumber;
+        document.getElementById("currentDeposite").innerText = totalDeposite;
+        document.getElementById("depositeAmount").value = "";
+
+        const currentBalance =
+          document.getElementById("currentBalance").innerText;
+        const currentBalanceNumber = parseFloat(currentBalance);
+        const totalBalance = currentBalanceNumber + depositeNumber;
+        document.getElementById("currentBalance").innerText = totalBalance;
+      });
+    </script>
+  </body>
+</html>
