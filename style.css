@@ -1,17 +1,20 @@
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:rgb(247, 247, 247);
+    
 }
 .submit-container{
+    background-color: white;
     display: flex;
     justify-content: center;
-    box-shadow:0px 0px 5px rgb(139, 139, 139);
+    box-shadow:0px 0px 2px rgb(139, 139, 139);
     margin:0px 320px;
     padding-bottom:25px;
     border-radius:5px;
     
 }
 .submit-container:hover{
-    box-shadow:0px 0px 8px rgb(139, 139, 139);
+    box-shadow:0px 0px 4px rgb(139, 139, 139);
 }
 .text-center{
     text-align: center;
@@ -23,10 +26,18 @@ body{
     border-top:none;
     border-left:none;
     border-right:none;
+    border-width:1px;
+    color:rgb(0, 167, 0);
+    border-color:rgb(0, 167, 0);
+}
+.form-control::placeholder{
+    color:rgb(255, 123, 0);
 }
 .form-control:focus{
     outline-style: none;
     border-color:rgb(0, 167, 0);
+    color:rgb(0, 167, 0);
+    border-radius:3px;
 }
 .btn1{
     padding:4px 15px;
@@ -34,10 +45,68 @@ body{
     border:none;
     background-color:rgb(0, 167, 0);
     color:white;
+    border-radius:3px;
+
+}
+.btn1:hover{
+    background-color:rgb(0, 151, 0) ;
 }
 .bankText{
     color:rgb(255, 123, 0);
 }
 #login-area{
     margin-top:50px;
+}
+#transaction-area{
+    display: none;
+}
+
+.cl-4{
+    background-color:white;
+    padding: 1px 25px;
+    margin:10px;
+    border-radius:5px;
+    box-shadow:0px 0px 2px rgb(139, 139, 139);
+    width:200px;
+}
+.cl-4:hover{
+    box-shadow:0px 0px 4px rgb(139, 139, 139);
+}
+.row{
+    display: flex;
+    justify-content: center;
+    margin-left:13%;
+    margin-right:13%; 
+}
+.cl-6{
+    background-color:white;
+    padding: 1px 25px;
+    padding-bottom:25px;
+    margin:10px;
+    border-radius:5px;
+    box-shadow:0px 0px 2px rgb(139, 139, 139);
+    width:330px;
+}
+.cl-6:hover{
+    box-shadow:0px 0px 4px rgb(139, 139, 139);
+}
+.btn2{
+    background-color:black ;
+    border:none;
+    color:white;
+    height:25px;
+    border-radius:3px;
+}
+.btn2:hover{
+    background-color:rgb(0, 151, 0) ;
+}
+.input3{
+    height:20px;
+    border-width: 1px;
+    border-radius:3px;
+}
+.input3:focus{
+    outline-color:rgb(0, 167, 0); ;
+    color:rgb(0, 167, 0);
+    border-width: 1px;
 }

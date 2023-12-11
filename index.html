@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Bank Arabic</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="login-area">
-      <h3 class="text-center">Welcome To <span class="bankText">Bank Arabic</span></h3>
+      <h3 class="text-center">
+        Welcome To <span class="bankText">Bank Arabic</span>
+      </h3>
       <div class="submit-container">
         <div class="submit-area">
           <h4>Login</h4>
@@ -26,5 +28,50 @@
         </div>
       </div>
     </div>
+
+    <!-- transaction-area -->
+    <div id="transaction-area">
+      <div class="row">
+        <div class="cl-4 Deposite">
+          <h5>Deposite</h5>
+          <h2>$00</h2>
+        </div>
+
+        <div class="cl-4 Withdraw">
+          <h5>Withdraw</h5>
+          <h2>$00</h2>
+        </div>
+
+        <div class="cl-4 Balance">
+          <h5>Balance</h5>
+          <h2>$1100</h2>
+        </div>
+      </div>
+
+      <!-- input area -->
+      <div class="row">
+        <div class="cl-6">
+          <h4>Deposite</h4>
+          <input class="input3" type="text" />
+          <button class="btn2">Deposite</button>
+        </div>
+
+        <div class="cl-6">
+          <h4>Withdraw</h4>
+          <input class="input3" type="text" />
+          <button class="btn2">Withdraw</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const loginBtn = document.getElementById("login");
+      loginBtn.addEventListener("click", function () {
+      const loginArea = document.getElementById("login-area");
+      loginArea.style.display = "none";
+      const transactionArea = document.getElementById("transaction-area");
+      transactionArea.style.display = "block";
+      });
+    </script>
   </body>
 </html>
