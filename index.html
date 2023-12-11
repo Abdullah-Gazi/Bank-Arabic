@@ -15,11 +15,13 @@
         <div class="submit-area">
           <h4>Login</h4>
           <input
+            required
             type="text"
             class="form-control"
             placeholder="Name"
           /><br /><br />
           <input
+            required
             type="text"
             class="form-control"
             placeholder="Password"
@@ -39,7 +41,7 @@
 
         <div class="cl-4 Withdraw">
           <h5>Withdraw</h5>
-          <h2>$00</h2>
+          <h2>$<span id="currentWithdraw">00</span></h2>
         </div>
 
         <div class="cl-4 Balance">
@@ -88,7 +90,11 @@
       // withdreaw button event handler
       const withdrawBtn = document.getElementById("addWithdraw");
       withdrawBtn.addEventListener("click", function () {
-        const withdrawNumber = getInputNubmer("withdreawAmount");
+        const withdrawNumber = getInputNubmer("withdrawAmount");
+
+        updateSpanText("currentWithdraw", withdrawNumber);
+        updateSpanText("currentBalance", -1 * withdrawNumber);
+        document.getElementById("withdrawAmount").value = "";
       });
       function getInputNubmer(id) {
         const Amount = document.getElementById(id).value;
