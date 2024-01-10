@@ -6,8 +6,8 @@
 body{
     background-color: #f3f3f3;
 }
-.logoName{
-    color:yellow;
+#name{
+    color:rgb(255, 136, 0);
 }
 .loginElement h3{
     text-align: center;
