@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Arabic</title>
+    <link rel="icon" type="image/x-icon" href="logo 2-01.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- login section -->
+    <div id="loginSection" class="loginSection">
+      <div class="loginElement">
+        <h3>Welcome to Bank Arabic</h3>
+        <div class="loginPanel">
+          <div>
+            <h4 class="loginTxt">Login</h4>
+            <input class="loginInput" type="text" placeholder="Name" /><br />
+            <input
+              class="loginInput"
+              type="password"
+              placeholder="Password"
+            /><br />
+            <button id="loginSubmitBtn" class="loginSubmitBtn">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- calculation section -->
+    <div
+      id="calculationSection"
+      class="calculationSection"
+      style="display: none"
+    >
+      <h4>Your Bank Info</h4>
+      <div class="displaySection">
+        <div class="deposit">
+          <h4>Deposit</h4>
+          <br />
+          <h4>$<span id="currentDeposit">0</span></h4>
+        </div>
+        <div class="withdraw">
+          <h4>Withdraw</h4>
+          <br />
+          <h4>$<span id="currentWithdraw">0</span></h4>
+        </div>
+        <div class="Amount">
+          <h4>Amount</h4>
+          <br />
+          <h4>$<span id="currentBalance">0</span></h4>
+        </div>
+      </div>
+
+      <!-- input -->
+      <div class="inputSection">
+        <div class="depositInput">
+          <h4>Deposit</h4>
+          <input
+            id="depositAmount"
+            class="commonInputStyle"
+            type="text"
+            placeholder="Enter Amount"
+          /><br />
+          <button id="btnDepositInput" class="btnDepositInput">Submit</button>
+        </div>
+
+        <div class="withdrawInput">
+          <h4>Withdraw</h4>
+          <input
+            id="withdrawAmount"
+            class="commonInputStyle"
+            type="text"
+            placeholder="Enter Amount"
+          /><br />
+          <button id="btnWithdrawInput" class="btnWithdrawInput">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // login button event handler
+      const loginSubmitBtn = document.getElementById("loginSubmitBtn");
+
+      loginSubmitBtn.addEventListener("click", function () {
+        const loginSection = document.getElementById("loginSection");
+        loginSection.style.display = "none";
+
+        const calculationSection =
+          document.getElementById("calculationSection");
+        calculationSection.style.display = "block";
+      });
+
+      // deposit button event handler
+      const btnDepositInput = document.getElementById("btnDepositInput");
+
+      btnDepositInput.addEventListener("click", function () {
+        const depositNumber = getInputNumber("depositAmount");
+
+        updateSpanText("currentDeposit", depositNumber);
+        updateSpanText("currentBalance", depositNumber);
+
+        document.getElementById("depositAmount").value = "";
+      });
+
+      // withdraw button event handler
+      const btnWithdrawInput = document.getElementById("btnWithdrawInput");
+
+      btnWithdrawInput.addEventListener("click", function () {
+        const withdrawNumber = getInputNumber("withdrawAmount");
+
+        updateSpanText("currentWithdraw", withdrawNumber);
+        updateSpanText("currentBalance", -1 * withdrawNumber);
+
+        document.getElementById("withdrawAmount").value = "";
+      });
+
+      function getInputNumber(id) {
+        const amount = document.getElementById(id).value;
+        const amountNumber = parseFloat(amount);
+        return amountNumber || 0; // Return 0 if the input is not a valid number
+      }
+
+      function updateSpanText(id, addedNumber) {
+        const current = document.getElementById(id).innerText;
+        const currentNumber = parseFloat(current);
+        const totalAmount = addedNumber + currentNumber;
+        document.getElementById(id).innerText = totalAmount.toFixed(2); // Format to two decimal places
+      }
+    </script>
+  </body>
+</html>

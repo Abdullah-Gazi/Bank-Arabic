@@ -1,0 +1,149 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: #f3f3f3;
+}
+.loginElement h3{
+    text-align: center;
+    margin:20px;
+}
+.loginPanel{
+    display: flex;
+    justify-content: center;
+}
+.loginPanel div{
+    padding:100px 135px;
+    box-shadow: 0 0 1px rgb(92, 92, 92);
+    border-radius:7px;
+    background-color:white;
+}
+.loginPanel div:hover{
+    
+}
+.loginInput{
+    width:400px;
+    height:27px;
+    padding:0 10px;
+    margin:5px 0px; 
+    border-radius:3px;
+    border:1px solid rgb(184, 184, 184);
+}
+.loginInput:focus{
+    outline:1px solid skyblue;
+}
+.loginSubmitBtn{
+    padding: 3px 11px;
+    border-radius:3px;
+    border:1px solid rgb(184, 184, 184);
+    background-color: rgb(0, 189, 0);
+}
+.loginSubmitBtn:hover{
+    background-color: rgb(2, 155, 2);
+}
+.loginTxt{
+    color:rgb(0, 189, 0);
+}
+.deposit, .withdraw, .Amount {
+    box-shadow: 0 0 1px rgb(92, 92, 92);
+    background-color:white;width:200px;
+    padding:15px 15px;
+    padding-bottom:25px;
+
+    border-radius:3px;
+    margin-top:20px;
+}
+.displaySection,.inputSection{
+    display:flex;
+    justify-content:center;
+}
+.inputSection{
+    display:flex;
+}
+.depositInput,.withdrawInput{
+    box-shadow: 0 0 1px rgb(92, 92, 92);
+    background-color:white;
+    width:315px;
+    padding:7px 15px;
+    border-radius:3px;
+    margin-top:20px;
+}
+.commonInputStyle{
+    width:200px;
+    height:27px;
+    padding:0 10px;
+    margin:5px 0px; 
+    border-radius:3px;
+    border:1px solid rgb(184, 184, 184);
+}
+.btnDepositInput,.btnWithdrawInput{
+    padding: 3px 11px;
+    border-radius:3px;
+    border:1px solid rgb(184, 184, 184);
+    background-color: rgb(0, 189, 0);
+    color:white;
+}
+.btnDepositInput:hover,.btnWithdrawInput:hover{
+    background-color: rgb(0, 167, 0);
+}
+.commonInputStyle:focus{
+    outline:1px solid skyblue;
+}
+.calculationSection h4{
+    margin-top:20px;
+    text-align: center;
+}
+.calculationSection{
+    display:none;
+}
+
+@media (max-width: 916px) {
+    .loginPanel div{
+        padding:20px 30px;
+        box-shadow: 0 0 1px rgb(92, 92, 92);
+        border-radius:7px;
+        background-color:white;
+    }
+    .loginInput{
+        width:200px;
+        height:27px;
+        padding:0 10px;
+        margin:5px 0px; 
+        border-radius:3px;
+        border:1px solid rgb(184, 184, 184);
+    }
+    .deposit, .withdraw, .Amount {
+        box-shadow: 0 0 1px rgb(92, 92, 92);
+        background-color:white;
+        width:100px;
+        padding:15px 15px;
+        padding-bottom:25px;
+    
+        border-radius:3px;
+        margin-top:20px;
+    }
+    .depositInput,.withdrawInput{
+        box-shadow: 0 0 1px rgb(92, 92, 92);
+        background-color:white;
+        width:160px;
+        padding:7px 15px;
+        border-radius:3px;
+        margin-top:20px;
+    }
+    .depositInput{
+        margin-right:5px;
+    }
+    .withdrawInput{
+        margin-left:5px;
+    }
+    .commonInputStyle{
+        width:150px;
+        height:27px;
+        padding:0 10px;
+        margin:5px 0px; 
+        border-radius:3px;
+        border:1px solid rgb(184, 184, 184);
+    }
+}
